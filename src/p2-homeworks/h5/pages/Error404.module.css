@@ -1,0 +1,10 @@
+.img img{
+    width: 100%;
+}
+.img p {
+    font-size: 200%;
+    text-align: center;
+    border: red 3px solid;
+    width: 120px;
+    margin: 0 auto;
+}
