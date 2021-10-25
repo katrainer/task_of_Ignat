@@ -10,7 +10,7 @@ function HW6() {
         saveState<string>('editable-span-value', value)
     }
     const restore = () => {
-        // setValue()
+        setValue(restoreState('editable-span-value',''))
     }
 
     return (
@@ -38,3 +38,7 @@ function HW6() {
 }
 
 export default HW6
+function state<T>(arg0: string, state: any) {
+    throw new Error('Function not implemented.')
+}
+

@@ -1,0 +1,10 @@
+.SuperEditableSpan{
+    display: inline-block;
+    margin:8px 0;
+    color: red;
+}
+
+.SuperEditableSpan img{
+    width: 20px;
+    height: 20px;
+}
