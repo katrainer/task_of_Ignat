@@ -42,7 +42,7 @@ function HW8() {
             {finalPeople}
 
             <SuperButton onClick={sortUp}>sort up</SuperButton>
-            <SuperButton onChange={sortDown}>sort down</SuperButton>
+            <SuperButton onClick={sortDown}>sort down</SuperButton>
             <SuperButton onClick={check18}>check 18</SuperButton>
 
             <hr/>

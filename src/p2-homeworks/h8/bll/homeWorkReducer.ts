@@ -12,7 +12,6 @@ type CheckType = {
 }
 
 export const homeWorkReducer = (state: Array<UserType>, action: GeneralType): Array<UserType> => { // need to fix any
-
     switch (action.type) {
         case 'sort': {
             const sortArray = (x: any, y: any) => {
@@ -24,6 +23,7 @@ export const homeWorkReducer = (state: Array<UserType>, action: GeneralType): Ar
                 }
                 return 0;
             }
+
             return action.payload === 'up' ? [...state.sort(sortArray)] : [...state.sort(sortArray).reverse()]
         }
         case 'check': {
@@ -33,5 +33,3 @@ export const homeWorkReducer = (state: Array<UserType>, action: GeneralType): Ar
             return state
     }
 }
-
-
