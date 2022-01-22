@@ -1,0 +1,8 @@
+.niceStyle{
+    margin: 2px;
+    border: white 1px solid;
+    width: 80px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
