@@ -1,41 +1,24 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
-import s from './SuperRange.module.css'
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
+import Stack from '@mui/material/Stack';
+import React from 'react'
 
-// тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+type SuperRangeType = {
+    value1: number
+    setValue1: (value1:number)=>void
+}
 
-// здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
-// (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
-type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
-    onChangeRange?: (value: number) => void
-};
-
-const SuperRange: React.FC<SuperRangePropsType> = (
-    {
-        type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
-        onChange, onChangeRange,
-        className,
-
-        ...restProps// все остальные пропсы попадут в объект restProps
-    }
-) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
-
-        onChangeRange && onChangeRange(+e.currentTarget.value)
-    }
-
-    const finalRangeClassName = `${s.range} ${className ? className : ''}`
-
+const SuperRange:React.FC<SuperRangeType> = ({value1,setValue1}) => {
+    const handleChange = (event: Event, newValue: number | number[]) => {
+        setValue1(newValue as number);
+    };
     return (
         <>
-            <input
-                type={'range'}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
-
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-            />
+            <Box sx={{ width: 300 }}>
+                {/*<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">*/}
+                    <Slider aria-label="Volume" value={value1} onChange={handleChange} />
+                {/*</Stack>*/}
+            </Box>
         </>
     )
 }
