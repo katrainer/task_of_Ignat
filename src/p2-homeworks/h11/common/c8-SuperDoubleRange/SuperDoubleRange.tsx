@@ -14,6 +14,7 @@ export const SuperDoubleRange: React.FC<SuperDoubleRangeType> =
             setValue1(arrayValue2[0])
             setValue2(newValue as number[]);
         }
+        console.log('aaa')
         return (
             <>
                 <Box sx={{width: 300}}>
