@@ -69,7 +69,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                         {...restSpanProps}
                     >
                         {/*если нет захардкодженного текста для спана, то значение инпута*/}
-                        <img src='https://cdn-icons.flaticon.com/png/512/2356/premium/2356780.png?token=exp=1635183715~hmac=a3b8c670f0d8ed57194cb09c9e8c9916'/>
+                        ✎
                         {children || restProps.value}
                     </span>
                 )
